@@ -16,10 +16,10 @@ public class Problema6 {
      */
     public static void main(String[] args) {
         int h,s,o;
-        h=solicitarDato("numero de horas: ");
+        h=solicitarDato("numero de horas: ");    //Solicitan datos
         s=solicitarDato("salario: ");
-        o=operacion(h,s);
-        System.out.println("Gracias por usar el programa");
+        o=operacion(h,s);   //operacion
+        mensajeSalida();
     }
     public static int solicitarDato(String d){
         int miDato;
@@ -29,12 +29,15 @@ public class Problema6 {
         return miDato;
     }
     public static int operacion(int h, int s){
-        int r=0;
-        if (h<=40){r= h*s;}
-        if (h>=48){r= ((h*s)*2);}
-        if (h>48) {r= ((h*s)*3);}
+        int r= ((h*s)*2);       //Se hacen  las operaciones donde si pasa de 48 la paga sera el doble
+        if (h<=40)r= h*s;
+        if (h>48) r= ((h*s)*3);
        System.out.println("El pago de " + h + " horas por " + s + " pesos a la semana es igual a: " + r + " pesos");
         return r;
         
         }
+    public static void mensajeSalida(){
+        System.out.println("Gracias por usar el programa"); //se agradece
+        System.exit(0);//Sale del programa
+    }          
 }
